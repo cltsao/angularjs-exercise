@@ -21,7 +21,7 @@ export class PatientService {
 	}
 
 	getAverageCost(attribute: string, value: string) {
-		var costs = PATIENTS.filter(patient => attribute in patient && patient[attribute] == value && patient.procedure).map(patient => patient.procedure.cost);
+		var costs = PATIENTS.filter(patient => attribute in patient && patient[attribute] == value && typeof patient.procedure !== 'undefined').map(patient => patient.procedure.cost);
 		var sum = 0;
 		costs.forEach(function(cost) { sum += +cost; });
 		var average = sum / costs.length;

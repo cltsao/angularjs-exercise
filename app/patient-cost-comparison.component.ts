@@ -16,7 +16,7 @@ import { PatientService } from './patient.service';
 export class PatientCostComparisonComponent implements OnInit {
 	patient: Patient;
 	costComparison: CostComparison;
-	keys: Array;
+	keys: Array<string>;
 	
 	constructor(
 	  private patientService: PatientService,
