@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { Patient, CostComparison } from './patient';
+import { Patient } from './patient';
 import { PatientService } from './patient.service';
 
 declare var jQuery:any;

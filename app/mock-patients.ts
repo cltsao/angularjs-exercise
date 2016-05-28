@@ -1001,3 +1001,4 @@ export var PATIENTS: Patient[] = [
 {"id":999,"gender":"Female","first_name":"Beverly","last_name":"Powell","city":"Vancouver","country":"United States","company":"Demimbu","job":"Assistant Manager","race":"Honduran","drug":{"first":"Diphenhydramine Hydrochloride","second":null},"procedure":{"code":"8129","desc":"Arthrodesis NEC","date":"9/7/2015","cost":"3281.6"}},
 {"id":1000,"gender":"Male","first_name":"Raymond","last_name":"Clark","city":"Cumming","country":"United States","company":"Kazu","job":"Senior Financial Analyst","race":"Vietnamese","drug":{"first":"Bismuth Subsalicylate","second":null},"procedure":{"code":"0096","desc":"Infusion 4F-PCC","date":"8/31/2015","cost":"943.43"}}
 ];
+console.log("Load " + PATIENTS.length + " patients.");
