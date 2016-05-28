@@ -4,7 +4,11 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 import { PatientService } from './patient.service';
 import { PatientsComponent } from './patients.component';
 import { PatientDetailsComponent } from './patient-details.component';
+import { PatientCostComparisonComponent } from './patient-cost-comparison.component';
 
+/**
+ * App component for navigation.
+ */
 @Component({
   selector: 'health-portal',
   template: `
@@ -29,6 +33,11 @@ import { PatientDetailsComponent } from './patient-details.component';
   path: '/patient/:id',
   name: 'Patient',
   component: PatientDetailsComponent
+},
+{
+  path: '/patient-cost-comparison/:id',
+  name: 'PatientCostComparison',
+  component: PatientCostComparisonComponent
 }
 ])
 

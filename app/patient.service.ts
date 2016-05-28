@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Patient } from './patient';
 import { PATIENTS } from './mock-patients';
 
+/**
+ * Service for getting one or multiple patients. For simplicity, it reads patients from mock data.
+ */
 @Injectable()
 export class PatientService {
 	getPatients() {

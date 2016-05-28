@@ -1,0 +1,8 @@
+<div *ngIf="patient">
+	<h2>Cost Comparison for {{patient.first_name}} {{patient.last_name}}</h2>
+	<nav>
+      <a [routerLink]="['Patients']">Back</a>
+      <a [routerLink]="['Patient', {id: patient.id}]">Details</a>
+      <a [routerLink]="['PatientCostComparison', {id: patient.id}]">Cost Comparison</a>
+    </nav>
+</div>

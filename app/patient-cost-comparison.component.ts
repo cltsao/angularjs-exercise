@@ -8,12 +8,12 @@ import { PatientService } from './patient.service';
  * Component that shows the details of a single patient.
  */
 @Component({
-	selector: 'patient-details',
-	templateUrl: 'app/patient-details.component.html',
+	selector: 'patient-cost-comparison',
+	templateUrl: 'app/patient-cost-comparison.component.html',
 	directives: [ROUTER_DIRECTIVES]
 })
 
-export class PatientDetailsComponent implements OnInit {
+export class PatientCostComparisonComponent implements OnInit {
 	patient: Patient;
 	
 	constructor(

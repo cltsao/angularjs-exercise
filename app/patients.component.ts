@@ -4,6 +4,9 @@ import { Router } from '@angular/router-deprecated';
 import { Patient } from './patient';
 import { PatientService } from './patient.service';
 
+/**
+ * Component that lists patients for selecting a patient to view details.
+ */
 @Component({
   selector: 'patients',
   template:`
