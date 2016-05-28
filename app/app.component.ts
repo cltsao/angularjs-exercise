@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 import { PatientService } from './patient.service';
 import { PatientsComponent } from './patients.component';
+import { PatientDetailsComponent } from './patient-details.component';
 
 @Component({
   selector: 'health-portal',
@@ -22,8 +23,13 @@ import { PatientsComponent } from './patients.component';
   path: '/patients',
   name: 'Patients',
   component: PatientsComponent,
-  useAsDefault: true,
+  useAsDefault: true
 },
+{
+  path: '/patient/:id',
+  name: 'Patient',
+  component: PatientDetailsComponent
+}
 ])
 
 export class AppComponent {

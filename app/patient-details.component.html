@@ -1,0 +1,13 @@
+<div *ngIf="patient">
+	<h2>{{patient.first_name}} {{patient.last_name}}</h2>
+	<div>
+		<label>Id: </label>{{patient.id}}
+	</div>
+	<div>
+		<label>First name: </label>{{patient.first_name}}
+	</div>
+	<div>
+		<label>Last name: </label>{{patient.last_name}}
+	</div>
+	<button (click)="goBack()">Back</button>
+</div>
