@@ -20,12 +20,12 @@ export class PatientService {
 		return PATIENTS.filter(patient => patient.id === id)[0];
 	}
 
-	getAverageCost(country: string) {
-		var costs = PATIENTS.filter(patient => patient.country === country && typeof patient.procedure === 'object').map(patient => patient.procedure.cost);
+	getAverageCost(attribute: string, value: string) {
+		var costs = PATIENTS.filter(patient => attribute in patient && patient[attribute] == value && patient.procedure).map(patient => patient.procedure.cost);
 		var sum = 0;
 		costs.forEach(function(cost) { sum += +cost; });
 		var average = sum / costs.length;
-		console.log("Statistics of patients by country " + country + ": count = " + costs.length + ", average = " + average);
+		console.log("Statistics of patients by " + attribute + " = " + value + ": count = " + costs.length + ", average = " + average);
 		return average;
 	}
 }

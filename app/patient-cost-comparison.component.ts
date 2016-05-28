@@ -16,6 +16,7 @@ import { PatientService } from './patient.service';
 export class PatientCostComparisonComponent implements OnInit {
 	patient: Patient;
 	costComparison: CostComparison;
+	keys: Array;
 	
 	constructor(
 	  private patientService: PatientService,
@@ -26,7 +27,8 @@ export class PatientCostComparisonComponent implements OnInit {
 		let id = +this.routeParams.get('id');
 		this.patient = this.patientService.getPatient(id);
 		this.costComparison = {};
-		this.costComparison['country'] = this.patientService.getAverageCost(this.patient.country);
+		this.keys = ['gender', 'city', 'country', 'company', 'job', 'race'];
+		this.keys.forEach(key => this.costComparison[key] = this.patientService.getAverageCost(key, this.patient[key]));
 	}
 
 	goBack() {

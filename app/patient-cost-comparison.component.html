@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<h3>Average cost of patients similar to me</h3>
-	<div>
-		<label>Country: </label>{{costComparison['country']}}
+	<div *ngFor="let key of keys">
+		<label>{{patient[key]}} ({{key}}): </label>{{costComparison[key]}}
 	</div>
 </div>
