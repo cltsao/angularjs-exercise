@@ -9,5 +9,45 @@
 	<div>
 		<label>Last name: </label>{{patient.last_name}}
 	</div>
+	<div>
+		<label>City: </label>{{patient.city}}
+	</div>
+	<div>
+		<label>Country: </label>{{patient.country}}
+	</div>
+	<div>
+		<label>Company: </label>{{patient.company}}
+	</div>
+	<div>
+		<label>Job: </label>{{patient.job}}
+	</div>
+	<div>
+		<label>Race: </label>{{patient.race}}
+	</div>
+	<div *ngIf="patient.drug">
+		<h3>Drug</h3>
+		<div>
+			<label>First: </label>{{patient.drug.first}}
+		</div>
+		<!-- Second drug is optional -->
+		<div *ngIf="patient.drug.second">
+			<label>Second: </label>{{patient.drug.second}}
+		</div>
+	</div>
+	<div *ngIf="patient.procedure">
+		<h3>Procedure</h3>
+		<div>
+			<label>Code: </label>{{patient.procedure.code}}
+		</div>
+		<div>
+			<label>Desc: </label>{{patient.procedure.desc}}
+		</div>
+		<div>
+			<label>Date: </label>{{patient.procedure.date}}
+		</div>
+		<div>
+			<label>Cost: </label>{{patient.procedure.cost}}
+		</div>
+	</div>
 	<button (click)="goBack()">Back</button>
 </div>
