@@ -17,7 +17,6 @@ declare var jQuery:any;
 
  export class PatientCostComparisonComponent implements OnInit {
  	patient: Patient;
- 	costComparison: CostComparison;
  	keys: Array<string>;
  	categories: Array<string>;
  	values: Array<number>;
@@ -30,12 +29,10 @@ declare var jQuery:any;
  	ngOnInit() {
  		let id = +this.routeParams.get('id');
  		this.patient = this.patientService.getPatient(id);
- 		this.costComparison = {};
  		this.categories = [ 'My cost' ];
  		this.values = [ +this.patient.procedure.cost ];
  		this.keys = ['gender', 'city', 'country', 'company', 'job', 'race'];
  		this.keys.forEach(key => {
- 			this.costComparison[key] = this.patientService.getAverageCost(key, this.patient[key]);
  			this.categories.push(this.patient[key] + ' (' + key + ')');
  			this.values.push(this.patientService.getAverageCost(key, this.patient[key]));
  		});
@@ -51,7 +48,7 @@ declare var jQuery:any;
  				type: 'bar'
  			},
  			title: {
- 				text: 'Cost Comparison for ' + this.patient.first_name + ' ' + this.patient.last_name
+ 				text: 'Average Procedure Cost'
  			},
  			xAxis: {
  				categories: this.categories
@@ -66,18 +63,15 @@ declare var jQuery:any;
  					overflow: 'justify'
  				}
  			},
- 			plotOptions: {
- 				bar: {
- 					dataLabels: {
- 						enabled: true
- 					}
- 				}
- 			},
+ 			tooltip: {
+		        pointFormat: "Value: ${point.y:.2f}"
+		    },
  			credits: {
  				enabled: false
  			},
  			series: [{
  				name: 'Cost',
+ 				showInLegend: false,
  				data: this.values
  			}]
  		});
