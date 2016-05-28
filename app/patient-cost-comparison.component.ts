@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { Patient } from './patient';
+import { Patient, CostComparison } from './patient';
 import { PatientService } from './patient.service';
 
 /**
@@ -15,6 +15,7 @@ import { PatientService } from './patient.service';
 
 export class PatientCostComparisonComponent implements OnInit {
 	patient: Patient;
+	costComparison: CostComparison;
 	
 	constructor(
 	  private patientService: PatientService,
@@ -23,8 +24,9 @@ export class PatientCostComparisonComponent implements OnInit {
 
 	ngOnInit() {
 		let id = +this.routeParams.get('id');
-		this.patientService.getPatient(id)
-		  .then(patient => this.patient = patient);
+		this.patient = this.patientService.getPatient(id);
+		this.costComparison = {};
+		this.costComparison['country'] = this.patientService.getAverageCost(this.patient.country);
 	}
 
 	goBack() {

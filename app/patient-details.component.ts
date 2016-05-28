@@ -23,8 +23,9 @@ export class PatientDetailsComponent implements OnInit {
 
 	ngOnInit() {
 		let id = +this.routeParams.get('id');
-		this.patientService.getPatient(id)
-		  .then(patient => this.patient = patient);
+		// this.patientService.getPatient(id)
+		//   .then(patient => this.patient = patient);
+		this.patient = this.patientService.getPatient(id);
 	}
 
 	goBack() {

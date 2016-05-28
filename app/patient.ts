@@ -23,3 +23,7 @@ export class Patient {
   drug: Drug;
   procedure: Procedure;
 }
+
+export interface CostComparison {
+    [attribute: string]: number;
+}

@@ -33,7 +33,8 @@ export class PatientsComponent implements OnInit {
   }
 
   getPatients() {
-    this.patientService.getPatients().then(patients => this.patients = patients.slice(0,20));
+    //this.patientService.getPatients().then(patients => this.patients = patients.slice(0,20));
+    this.patients = this.patientService.getPatients().slice(0, 20);
   }
 
   gotoPatient(patient: Patient) {

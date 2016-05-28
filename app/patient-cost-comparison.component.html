@@ -5,4 +5,13 @@
       <a [routerLink]="['Patient', {id: patient.id}]">Details</a>
       <a [routerLink]="['PatientCostComparison', {id: patient.id}]">Cost Comparison</a>
     </nav>
+    <div *ngIf="patient.procedure">
+		<div>
+			<label>My cost: </label>{{patient.procedure.cost}}
+		</div>
+	</div>
+	<h3>Average cost of patients similar to me</h3>
+	<div>
+		<label>Country: </label>{{costComparison['country']}}
+	</div>
 </div>
