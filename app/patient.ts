@@ -4,10 +4,10 @@ export class Drug {
 }
 
 export class Procedure {
-  code: number;
+  code: string;
   desc: string;
-  date: Date;
-  cost: number;
+  date: string;
+  cost: string;
 }
 
 export class Patient {
