@@ -42,7 +42,7 @@ export class PatientsComponent implements OnInit {
       });
     });
     var _this = this;
-    $("#patient-name").autocomplete({
+    jQuery("#patient-name").autocomplete({
       source: tags,
       select: function( event, ui ) {
         _this.gotoPatient(ui.item.value);
