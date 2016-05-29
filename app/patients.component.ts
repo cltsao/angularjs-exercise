@@ -46,6 +46,10 @@ export class PatientsComponent implements OnInit {
       source: tags,
       select: function( event, ui ) {
         _this.gotoPatient(ui.item.value);
+      },
+      open: function(event, ui) {
+        // Avoid the need to click twice in mobile browser.
+        jQuery('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
       }
     });
     this.patients = this.patients.slice(0, 20);
