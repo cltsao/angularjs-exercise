@@ -10,3 +10,8 @@ A programming exercise for learning AngularJS. It is a personal health portal th
 2. cd angularjs-exercise
 3. npm install
 4. npm start
+
+## Test
+1. In angularjs-exercise folder
+2. npm install -g live-server
+3. npm test
